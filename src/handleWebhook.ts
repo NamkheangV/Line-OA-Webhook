@@ -42,7 +42,7 @@ export const handleWebhook = (req: Request, res: Response) => {
               originalContentUrl:
                 "https://download.samplelib.com/mp4/sample-5s.mp4",
               previewImageUrl:
-                "https://download.samplelib.com/mp4/sample-5s.mp4",
+                "https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg?auto=compress&fm=pjpg",
             },
           ],
         });
