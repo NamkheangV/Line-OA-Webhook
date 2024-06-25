@@ -41,6 +41,46 @@ export const handleWebhook = (req: Request, res: Response) => {
             },
           ],
         });
+      } else if (text === "ที่อยู่") {
+        lineClient.replyMessage({
+          replyToken: event.replyToken,
+          messages: [
+            {
+              type: "location",
+              title: "มหาวิทยาลัยรังสิต",
+              address:
+                "52 347 ถ. พหลโยธิน ตำบล หลักหก อำเภอเมืองปทุมธานี ปทุมธานี 12000",
+              // 13.964310381829296, 100.5866290791515
+              latitude: 13.964310381829296,
+              longitude: 100.5866290791515,
+            },
+          ],
+        });
+      } else if (text === "วีดีโอ") {
+        lineClient.replyMessage({
+          replyToken: event.replyToken,
+          messages: [
+            {
+              type: "video",
+              originalContentUrl:
+                "https://download.samplelib.com/mp4/sample-5s.mp4",
+              previewImageUrl:
+                "https://download.samplelib.com/mp4/sample-5s.mp4",
+            },
+          ],
+        });
+      } else if (text === "เสียง") {
+        lineClient.replyMessage({
+          replyToken: event.replyToken,
+          messages: [
+            {
+              type: "audio",
+              originalContentUrl:
+                "https://tunes.stocktune.com/public/c/5/5/c555e234-116f-4625-b417-438256f9b854/whimsical-midnight-cat-ballet-stocktune.mp3",
+              duration: 1000 * 60 * 97,
+            },
+          ],
+        });
       } else if (text === "คอนเฟิร์ม") {
         lineClient.replyMessage({
           replyToken: event.replyToken,
@@ -63,6 +103,33 @@ export const handleWebhook = (req: Request, res: Response) => {
                     text: "no",
                   },
                 ],
+              },
+            },
+          ],
+        });
+      } else if (text === "แฟล็ก") {
+        lineClient.replyMessage({
+          replyToken: event.replyToken,
+          messages: [
+            {
+              type: "flex",
+              altText: "This is a Flex Message",
+              contents: {
+                type: "bubble",
+                body: {
+                  type: "box",
+                  layout: "vertical",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Hello,",
+                    },
+                    {
+                      type: "text",
+                      text: "World!",
+                    },
+                  ],
+                },
               },
             },
           ],
